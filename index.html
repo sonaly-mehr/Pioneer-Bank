@@ -1,15 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pioneer Bank</title>
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="Style.css">
 </head>
+
 <body>
-    <h1>Welcome to Pioneer Bank</h1>
+    <div class="container">
+
+        <div id="login-section">
+            <h1>Welcome to Pioneer Bank</h1>
+            <section class="login-form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="laptop-img">
+                            <img src="img/laptop-image.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="login-area">
+                            <form action="">
+                                <h4>Member Login</h4>
+                                <input type="email" placeholder="Email">
+                                <input type="password" placeholder="password">
+                            </form>
+                            <button id="login">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="withdraw-section">
+            <div class="transition-sec">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="single-transition">
+                            <h6>Deposit</h6>
+                            <h4>$ <span id="currentDeposit">00</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-transition">
+                            <h6>Withdraw</h6>
+                            <h4>$ <span id="currentWithdraw">00</span></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="single-transition">
+                            <h6>Balance</h6>
+                            <h4>$ <span id="Currentbalance">00</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deposit-withdraw">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="deposit">
+                                <h4>Deposit</h4>
+                                <input id="depositAmount" type="text" placeholder="$ amount you want to deposit">
+                                <button id="depositBttn">Deposit</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div id="withdraw">
+                                <h4>Withdraw</h4>
+                                <input id="withdrawAmount" type="text" placeholder="$ amount you want to withdraw">
+                                <button id="withdrawtBttn">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Login button 
+        document.getElementById('login').addEventListener('click', function () {
+        document.getElementById('login-section').style.display='none';
+        document.getElementById("withdraw-section").style.display="block";
+        });
+
+        //Deposit Button 
+
+        document.getElementById("depositBttn").addEventListener("click", function(){
+           const depositAmount = getInputNumber("depositAmount");
+
+        //    const cAmount = document.getElementById("currentDeposit").innerText;
+        //    const convertCAmount=parseFloat(cAmount);
+        //    const totalDeposit = convertAmount + convertCAmount;
+        //    document.getElementById("currentDeposit").innerText= totalDeposit;
+
+           document.getElementById("depositAmount").value= "";
+
+           updateSpanTag('currentDeposit', depositAmount);
+           updateSpanTag('Currentbalance', depositAmount);
+        })
+
+        //Withdraw Button 
+
+        document.getElementById("withdrawtBttn").addEventListener("click", function(){
+            const withdrawAmount= getInputNumber("withdrawAmount"); 
+             
+            updateSpanTag('currentWithdraw', withdrawAmount);
+            updateSpanTag('Currentbalance', -1*withdrawAmount);
+             
+            document.getElementById("withdrawAmount").value= "";
+        })
+
+        function getInputNumber(id){
+            const amount = document.getElementById(id).value;
+            const cAmount = parseFloat(amount);
+            return cAmount;
+        }
+
+        function updateSpanTag(id, depositAmount){
+           const Current = document.getElementById(id).innerText;
+           const converted = parseFloat(Current);
+           const totalBalance = depositAmount + converted;
+           document.getElementById(id).innerText= totalBalance;
+
+        }
+
+    
+
+    </script>
+
+
 </body>
+
 </html>

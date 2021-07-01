@@ -1,0 +1,117 @@
+body{
+    background-color: rgb(73, 73, 73);
+}
+h1{
+    color: #fff;
+    text-align: center;
+    margin-top: 60px;
+    font-weight: 600;
+}
+.login-form{
+    background: #fff;
+    padding: 100px 50px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+.laptop-img{}
+.laptop-img img{
+    background-color: #ececec;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    
+}
+.login-area{}
+.login-area h4{
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.login-area input{
+    width: 90%;
+    margin-bottom: 25px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    border: 1px solid #dedede;
+    padding: 0 20px;
+}
+.login-area button{
+    background: #11cd11;
+    color: #fff;
+    font-weight: 600;
+    font-size: 19px;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    width: 90%;
+    border: 1px solid #dedede;
+    
+}
+#withdraw-section{
+    color: #000;
+    padding-top: 50px;
+    background: #fff;
+    padding-bottom: 100px;
+    margin-top: 100px;
+    display: none;
+}
+.transition-sec{
+    margin-left: 17%;
+    margin-right: 0%;
+    margin-left: 9%;
+    margin-bottom: 50px;
+}
+.single-transition{
+    background: #6060e3;
+    text-align: left;
+    padding: 15px;
+    width: 70%;
+    border-radius: 10px;
+    color: #fff;
+    
+}
+.single-transition h6{
+    font-weight: 600;
+    font-size: 18px;
+}
+.single-transition h4{
+    font-size: 33px;
+    font-weight: 600;
+}
+.deposit-withdraw{
+    margin-left: 7%;
+    margin-right: 7%;
+}
+#deposit, #withdraw{
+    background: #fff;
+    box-shadow: 6px 4px 13px 4px #d7d5d5;
+    padding: 30px;
+    font-size: 20px;
+    font-weight: 600;
+}
+#deposit h4, #withdraw h4{
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#deposit input, #withdraw input{
+    width: 85%;
+    border: none;
+    border: 1px solid #ded9d9;
+    height: 34px;
+    font-size: 14px;
+    padding: 10px;
+}
+#deposit button, #withdraw button{
+    background: #0aa20a;
+    color: #fff;
+    width: 20%;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    border: 1px solid #ded9d9;
+    height: 35px;
+}
